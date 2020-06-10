@@ -8,4 +8,4 @@ Tools Used:
 -----------
   This app was implemented in React.js.
 
-<img href='screenshots/ss1'>
+<img src='screenshots/ss1'>
