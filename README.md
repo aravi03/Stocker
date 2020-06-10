@@ -8,7 +8,6 @@ Tools Used:
 -----------
   This app was implemented in React.js.
 
-<img src="screenshots/ss1.png" width="900">
-<img src="screenshots/ss2.png" width="900">
-<img src="screenshots/ss3.png" width="900">
-<img src="screenshots/ss4.png" width="900">
+<p><img src="screenshots/ss1.png" width="900"></p>
+<p><img src="screenshots/ss1.png" width="900"></p>
+<p><img src="screenshots/ss3.png" width="430">&ensp;&ensp;<img src="screenshots/ss4.png" width="430"></p>
