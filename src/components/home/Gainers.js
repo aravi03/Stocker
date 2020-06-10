@@ -9,14 +9,14 @@ export default class Gainers extends Component {
         this.state={stocks:[],fetch_check:false}
     }
     componentWillMount(){
-        setInterval(()=>{ 
-        fetch('https://financialmodelingprep.com/api/v3/stock/gainers')
+        // setInterval(()=>{ 
+        fetch('https://financialmodelingprep.com/api/v3/stock/gainers?apikey='+process.env.REACT_APP_SECRET_NAME)
         .then(response =>  response.json())
         .then(resData => {
             this.setState({stocks:resData.mostGainerStock,fetch_check:true})
             
         })
-    },5000)
+    // },5000)
     }
     render() {
         if(this.state.fetch_check)

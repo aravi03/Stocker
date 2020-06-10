@@ -9,14 +9,14 @@ export default class SectorPerformances extends Component {
         this.state={sectors:[],fetch_check:false}
     }
     componentWillMount(){
-        setInterval(()=>{ 
-        fetch('https://financialmodelingprep.com/api/v3/stock/sectors-performance')
+        // setInterval(()=>{ 
+        fetch(`https://financialmodelingprep.com/api/v3/stock/sectors-performance?apikey=${process.env.REACT_APP_SECRET_NAME}`)
         .then(response =>  response.json())
         .then(resData => {
             this.setState({sectors:resData.sectorPerformance,fetch_check:true})
             
         })
-    },5000)
+    // },5000)
     }
     render() {
         if(this.state.fetch_check)

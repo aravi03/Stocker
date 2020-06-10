@@ -7,7 +7,7 @@ export default class News extends Component {
     }
     componentWillMount(){
         
-        fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=23ae0343bbc74510889b82b86d6362a6&category=business&pageSize=30')
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWSAPI}&category=business&pageSize=30`)
         .then(response =>  response.json())
         .then(resData => {
             this.setState({news:resData.articles})

@@ -9,14 +9,14 @@ export default class Cryptocurrency extends Component {
         this.state={crypto:[],fetch_check:false}
     }
     componentWillMount(){
-        setInterval(()=>{ 
-        fetch('https://financialmodelingprep.com/api/v3/cryptocurrencies')
+        // setInterval(()=>{ 
+        fetch('https://financialmodelingprep.com/api/v3/cryptocurrencies/?apikey='+process.env.REACT_APP_SECRET_NAME)
         .then(response =>  response.json())
         .then(resData => {
             this.setState({crypto:resData.cryptocurrenciesList.slice(0,7),fetch_check:true})
             
         })
-    },5000)
+    // },5000)
     }
     render() {
         if(this.state.fetch_check)

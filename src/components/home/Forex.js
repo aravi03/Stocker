@@ -8,32 +8,32 @@ export default class Forex extends Component {
         this.state={GBPUSD:new Object(),EURUSD:new Object(),EURGBP:new Object(),USDCAD:new Object(),fetch_check:false}
     }
     componentWillMount(){
-        setInterval(()=>{ 
-        fetch('https://financialmodelingprep.com/api/v3/quote/GBPUSD')
+        // setInterval(()=>{ 
+        fetch('https://financialmodelingprep.com/api/v3/fx/EURUSD?apikey=28c1e90f862fe4f1b448ff0e36b681a3')
         .then(response =>  response.json())
         .then(resData => {
             this.setState({GBPUSD:resData[0]})
             
         });
-        fetch('https://financialmodelingprep.com/api/v3/quote/EURUSD')
+        fetch('https://financialmodelingprep.com/api/v3/fx/EURUSD?apikey='+process.env.REACT_APP_SECRET_NAME)
         .then(response =>  response.json())
         .then(resData => {
             this.setState({EURUSD:resData[0]})
             
         });
-        fetch('https://financialmodelingprep.com/api/v3/quote/EURGBP')
+        fetch('https://financialmodelingprep.com/api/v3/fx/EURGBP?apikey='+process.env.REACT_APP_SECRET_NAME)
         .then(response =>  response.json())
         .then(resData => {
             this.setState({EURGBP:resData[0]})
             
         });
-        fetch('https://financialmodelingprep.com/api/v3/quote/USDCAD')
+        fetch('https://financialmodelingprep.com/api/v3/fx/USDCAD?apikey='+process.env.REACT_APP_SECRET_NAME)
         .then(response =>  response.json())
         .then(resData => {
             this.setState({USDCAD:resData[0],fetch_check:true})
             
         });
-    },5000)
+    // },5000)
         
     }
     render() {

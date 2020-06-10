@@ -7,14 +7,14 @@ export default class MajorIndex extends Component {
         this.state={index:[],fetch_check:false,slide:1};
      }
      componentWillMount(){
-        setInterval(()=>{ 
-        fetch('https://financialmodelingprep.com/api/v3/majors-indexes')
+        // setInterval(()=>{ 
+        fetch('https://financialmodelingprep.com/api/v3/majors-indexes?apikey='+process.env.REACT_APP_SECRET_NAME)
         .then(response =>  response.json())
         .then(resData => {
          this.setState({index:resData.majorIndexesList,fetch_check:true});
         //this is an asynchronous function
           })
-       }, 5000);
+      //  }, 5000);
     
     }
     render() {

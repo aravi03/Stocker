@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import StockPrices from './home/StockPrices';
 import './style.css'
 function a(){
-    fetch("https://financialmodelingprep.com/api/v3/company/profile/AAPL")
+    fetch("https://financialmodelingprep.com/api/v3/company/profile/AAPL?apikey="+process.env.REACT_APP_APIKEY)
   .then(response => response.json())
   .then((data) => {
     document.getElementById("result").innerHTML = data.symbol+' price '+data.profile.price;
